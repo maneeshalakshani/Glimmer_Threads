@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import static java.sql.DriverManager.println;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        println("Hello this line is for pushing to gitgub test");
+        println("Test commit from Maneesha branch");
     }
 }
