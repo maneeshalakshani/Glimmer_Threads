@@ -18,7 +18,5 @@ public class MainActivity extends AppCompatActivity {
         println("To check pull request");
 
         println("Test commit from Maneesha branch");
-        println("To check pull request");
-        println("To check pull request");
     }
 }
