@@ -1,7 +1,5 @@
 package com.example.glimmerthreads;
 
-//package com.example.glimmer_threads;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+
     //Variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         /*Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
+
 
         //-------------Hooks---------------------
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //==================================================================================================================================================================
 
 
-    //To selectNavigation Items
+    /*//To selectNavigation Items
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //To redirects to pages, when navigation items clicked
@@ -90,6 +90,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_modify_discounts:
                 startActivity(new Intent(MainActivity.this,Discount_Modifier.class));
                 break; //Redirects to Discount_Modifier.xml when Discount Modifier clicked
+            case R.id.nav_Share:
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked
+                break;
+        }
+
+        //close navigation bar when an item selected
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }*/
+
+
+
+    //To selectNavigation Items
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        //To redirects to pages, when navigation items clicked
+        switch (item.getItemId()){
+            case R.id.nav_Home:
+                break; //Come back to home when home selected
             case R.id.nav_Share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked
                 break;
