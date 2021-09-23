@@ -29,6 +29,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
     EditText discount,code,name;  //----
     Button insert,update,delete,view,button_view_a_discount;
     DHhelper DB;
+    DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         button_view_a_discount = findViewById(R.id.button_view_a_discount);
 
         DB = new DHhelper(this);
+        dbHandler = new DBHandler(this);
 
 
         insert.setOnClickListener(new View.OnClickListener() {
@@ -160,6 +162,23 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 builder.show();
             }
         });
+
+
+
+
+
+        /*//Insert Images
+        public void InsertImage(View view){
+            try{
+                if(!imageDetails.getText.toString().isEmpty() && objectImageView.getDrawable() != null && imageToStore != null){
+                    dbHandler.storeImage(new ImageModel(imageDetails.getText().toString(),imageToStore));
+                }else{
+                    Toast.makeText(this, "Please select an Image name and Image", Toast.LENGTH_SHORT).show();
+                }
+            }catch(Exception e){
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }*/
 
 
 
