@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Menu Group 1 -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Sales"
+            android:icon="@drawable/offer_icon"
+            android:title="Sales" />
+
+
+        <item
+            android:id="@+id/nav_Home"
+            android:icon="@drawable/home_page"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_Rate"
+            android:icon="@drawable/rate_icon"
+            android:title="Rate" />
+
+        <item
+            android:id="@+id/nav_Share"
+            android:icon="@drawable/sgare_icon"
+            android:title="Share" />
+    </group>
+
+    <!-- Menu Group 2 -->
+    <item android:title="Adding">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_add_discounts"
+                    android:icon="@drawable/offer_add"
+                    android:title="Add Discounts" />
+
+                <item
+                    android:id="@+id/nav_add_vouchers"
+                    android:icon="@drawable/voucher"
+                    android:title="Add Vouchers" />
+
+                <item
+                    android:id="@+id/nav_add_Items"
+                    android:icon="@drawable/item_add"
+                    android:title="Add Items" />
+            </group>
+        </menu>
+    </item>
+
+    <!-- Menu Group 3 -->
+    <item android:title="Modify">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/sgare_icon"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_modify_items"
+                android:icon="@drawable/delete"
+                android:title="Modify Items" />
+            <item
+                android:id="@+id/nav_modify_discounts"
+                android:icon="@drawable/update"
+                android:title="Modify Discounts" />
+        </menu>
+    </item>
+
+</menu>
