@@ -201,6 +201,9 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 Intent intent = new Intent(Bus.this,MainActivity.class);
                 startActivity(intent);
                 break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_Sales:
+                startActivity(new Intent(Bus.this,Sales.class));
+                break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_Share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked
                 break;
