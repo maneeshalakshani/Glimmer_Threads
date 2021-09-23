@@ -11,7 +11,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +28,8 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
     EditText discount,code,name;  //----
     Button insert,update,delete,view,button_view_a_discount;
     DHhelper DB;
-    DBHandler dbHandler;
+    //DBHandler dbHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         button_view_a_discount = findViewById(R.id.button_view_a_discount);
 
         DB = new DHhelper(this);
-        dbHandler = new DBHandler(this);
+
 
 
         insert.setOnClickListener(new View.OnClickListener() {
@@ -232,4 +232,6 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

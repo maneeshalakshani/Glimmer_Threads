@@ -185,7 +185,17 @@ tools:openDrawer="start">
                     android:text="Add Discount"
                     android:textSize="20dp" />
 
-                <!--<Button
+                <!--<ImageView
+                    android:id="@+id/upload_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageUpload"
+                    android:src="@drawable/image_upload"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:onClick="choseImage"/>
+
+                <Button
                     android:id="@+id/imageUpload"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -193,12 +203,12 @@ tools:openDrawer="start">
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
                     android:background="#39b5db"
-                    android:text="Image"
+                    android:text="Upload Image"
                     android:textSize="20dp"
-                    android:onClick="InsertImage"/>
+                    android:onClick=""/>-->
 
 
-                <EditText
+                <!--<EditText
                     android:id="@+id/image_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

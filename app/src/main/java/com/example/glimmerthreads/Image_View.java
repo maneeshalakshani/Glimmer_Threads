@@ -85,5 +85,11 @@ public class Image_View extends AppCompatActivity {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
+
+
+    public void moveToShowActivity(View view){
+        startActivity(new Intent(this, Image_Display.class));
+    }
 }
 

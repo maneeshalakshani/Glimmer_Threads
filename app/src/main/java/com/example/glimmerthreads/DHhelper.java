@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
 public class DHhelper extends SQLiteOpenHelper {
     public DHhelper(Context context) {
@@ -15,7 +14,7 @@ public class DHhelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        /*DB.execSQL("create Table DiscountDetails(Discount_Code NUMBER primary key autoincrement,item_code NUMBER, discount TEXT,name TEXT)");*/   //-------
+        /*DB.execSQL("create Table DiscountDetails(Discount_Code NUMBER primary key autoincrement,item_code NUMBER, discount TEXT,name TEXT)"); */  //-------
         DB.execSQL("create Table DiscountDetails(Discount_Code NUMBER primary key ,discount TEXT,name TEXT)");
     }
 
@@ -31,7 +30,7 @@ public class DHhelper extends SQLiteOpenHelper {
         contentValues.put("name",name);
         contentValues.put("discount",discount);
         contentValues.put("Discount_Code",discount_code);
-        /*contentValues.put("item_code",discount_code);   //-------*/
+        /*contentValues.put("item_code",discount_code);*/   //-------
         long result = DB.insert("DiscountDetails",null,contentValues);
         if(result == -1){
             return false;
@@ -46,7 +45,7 @@ public class DHhelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("name",name);
         contentValues.put("discount",discount);
-        /*contentValues.put("item_code",discount_code);   //-------*/
+//        contentValues.put("item_code",discount_code);   //-------
         contentValues.put("Discount_Code",discount_code);
 
         //select a row
@@ -110,6 +109,9 @@ public class DHhelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         return cursor;
     }
+
+
+
 
 }
 

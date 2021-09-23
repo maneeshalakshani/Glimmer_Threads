@@ -2,14 +2,17 @@ package com.example.glimmerthreads;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -74,6 +77,39 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         catch (Exception e){
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+    //Get all Images
+    public ArrayList<ImageModel> getAllImagesData(){
+        try {
+            SQLiteDatabase DB = this.getReadableDatabase(); //Because going to read data
+            ArrayList<ImageModel> objectImageModelClassList = new ArrayList<>();
+
+            //Get values back
+            Cursor cursorObject = DB.rawQuery("select * from imageInfo", null);
+            if(cursorObject.getCount() != 0){
+                while (cursorObject.moveToNext()){
+                    String nameOfImage = cursorObject.getString(0);
+                    byte[] imageBytes = cursorObject.getBlob(1);
+
+                    //Convert bytes into Bitmap
+                    Bitmap bitmapObject = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.length);
+
+                    //Add this into ImageModel class
+                    objectImageModelClassList.add(new ImageModel(nameOfImage,bitmapObject));
+                }
+                return objectImageModelClassList;
+            }else{
+                Toast.makeText(context, "No values in Database", Toast.LENGTH_SHORT).show();
+                return null;
+            }
+
+        }catch (Exception e){
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+            return null;
         }
     }
 
