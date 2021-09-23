@@ -65,7 +65,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                app:srcCompat="@mipmap/logo_foreground" />
+                app:srcCompat="@drawable/glimmer_threads_modified" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"

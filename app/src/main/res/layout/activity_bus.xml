@@ -72,7 +72,7 @@ tools:openDrawer="start">
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:srcCompat="@mipmap/logo" />
+            app:srcCompat="@drawable/glimmer_thread_logo" />
 
         <TextView
             android:id="@+id/textView12"
