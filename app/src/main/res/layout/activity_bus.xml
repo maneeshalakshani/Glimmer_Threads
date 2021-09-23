@@ -89,7 +89,7 @@ tools:openDrawer="start">
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="650dp"
+            android:layout_height="730dp"
             android:orientation="horizontal"
             android:padding="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -184,6 +184,39 @@ tools:openDrawer="start">
                     android:background="#39b5db"
                     android:text="Add Discount"
                     android:textSize="20dp" />
+
+                <!--<ImageView
+                    android:id="@+id/upload_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageUpload"
+                    android:src="@drawable/image_upload"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:onClick="choseImage"/>
+
+                <Button
+                    android:id="@+id/imageUpload"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_btns"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:background="#39b5db"
+                    android:text="Upload Image"
+                    android:textSize="20dp"
+                    android:onClick=""/>-->
+
+
+                <!--<EditText
+                    android:id="@+id/image_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageUpload"
+                    android:hint="Enter Image Name"
+                    android:inputType="number"
+                    android:textSize="24dp" />-->
+
 
                 <LinearLayout
                     android:id="@+id/view_btns"
@@ -309,49 +342,7 @@ tools:openDrawer="start">
 
                 </LinearLayout>
 
-                <!--<Button
-                    android:id="@+id/button_update_discount"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button_get_discount"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="9dp"
-                    android:background="#7be86b"
-                    android:text="Update"
-                    android:textSize="20dp" />
 
-                <Button
-                    android:id="@+id/button_delete_discount"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button_update_discount"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="9dp"
-                    android:background="#F64646"
-                    android:text="Delete"
-                    android:textSize="20dp" />
-
-                <Button
-                    android:id="@+id/button_view_discount"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button_delete_discount"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="9dp"
-                    android:background="#7a7387"
-                    android:text="View All"
-                    android:textSize="20dp" />
-
-                <Button
-                    android:id="@+id/button_view_a_discount"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button_view_discount"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="9dp"
-                    android:background="#7a7387"
-                    android:text="View a Discount"
-                    android:textSize="20dp" />-->
 
 
             </RelativeLayout>

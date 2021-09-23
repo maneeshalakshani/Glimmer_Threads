@@ -11,7 +11,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +28,8 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
     EditText discount,code,name;  //----
     Button insert,update,delete,view,button_view_a_discount;
     DHhelper DB;
+    //DBHandler dbHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         button_view_a_discount = findViewById(R.id.button_view_a_discount);
 
         DB = new DHhelper(this);
+
 
 
         insert.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +166,23 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
 
 
+
+        /*//Insert Images
+        public void InsertImage(View view){
+            try{
+                if(!imageDetails.getText.toString().isEmpty() && objectImageView.getDrawable() != null && imageToStore != null){
+                    dbHandler.storeImage(new ImageModel(imageDetails.getText().toString(),imageToStore));
+                }else{
+                    Toast.makeText(this, "Please select an Image name and Image", Toast.LENGTH_SHORT).show();
+                }
+            }catch(Exception e){
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }*/
+
+
+
+
         //------------Tool Bar-----------------------
         setSupportActionBar(toolbar);
 
@@ -213,4 +232,6 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

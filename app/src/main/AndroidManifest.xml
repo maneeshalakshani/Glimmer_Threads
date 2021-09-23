@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Get_Discount_Code"></activity>
+        <activity android:name=".Image_Display"></activity>
+        <activity android:name=".Image_View" />
+        <activity android:name=".Get_Discount_Code" />
         <activity android:name=".Sales" />
         <activity android:name=".Bus" />
         <activity android:name=".MainActivity">
