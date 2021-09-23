@@ -109,6 +109,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()){
             case R.id.nav_Home:
                 break; //Come back to home when home selected
+            case R.id.nav_add_discounts:
+                Intent intent = new Intent(MainActivity.this,Bus.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_Sales:
+                startActivity(new Intent(MainActivity.this,Sales.class));
+                break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_Share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked
                 break;

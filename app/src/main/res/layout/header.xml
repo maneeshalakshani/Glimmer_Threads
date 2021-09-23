@@ -13,8 +13,8 @@
         android:id="@+id/imageView"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@mipmap/logo_foreground"
-        app:srcCompat="@mipmap/logo_foreground" />
+        android:src="@drawable/glimmer_thread_logo"
+        app:srcCompat="@drawable/glimmer_thread_logo" />
 
     <TextView
         android:layout_width="wrap_content"
