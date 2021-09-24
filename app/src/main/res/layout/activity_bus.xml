@@ -183,7 +183,8 @@ tools:openDrawer="start">
                     android:layout_marginTop="25dp"
                     android:background="#39b5db"
                     android:text="Add Discount"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:onClick="save"/>
 
                 <!--<ImageView
                     android:id="@+id/upload_icon"

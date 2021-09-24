@@ -42,7 +42,7 @@
                 <item
                     android:id="@+id/nav_add_Items"
                     android:icon="@drawable/item_add"
-                    android:title="Add Items" />
+                    android:title="Display All Discounts" />
             </group>
         </menu>
     </item>

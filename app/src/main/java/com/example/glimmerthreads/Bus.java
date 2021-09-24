@@ -40,12 +40,13 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+
         name = findViewById(R.id.get_item_name);
         discount = findViewById(R.id.get_discount_1);
         code = findViewById(R.id.get_item_code);    //-----
         /*icode = findViewById(R.id.get_item_code);      //----*/
 
-        insert = findViewById(R.id.button_get_discount);
+        //insert = findViewById(R.id.button_get_discount);
         update = findViewById(R.id.button_update_discount);
         delete = findViewById(R.id.button_delete_discount);
         view = findViewById(R.id.button_view_discount);
@@ -55,6 +56,17 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
 
 
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/*
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +92,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 String discountName = name.getText().toString();
                 int discountTXT = Integer.parseInt(discount.getText().toString());
                 int codeTXT = Integer.parseInt(code.getText().toString());
-                /*int icodeTXT = Integer.parseInt(icode.getText().toString());*/
+                *//*int icodeTXT = Integer.parseInt(icode.getText().toString());*//*
 
 
                 Boolean checkUpdateData = DB.updateData(discountName, codeTXT, discountTXT);
@@ -123,7 +135,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 StringBuffer buffer = new StringBuffer();
                 while (result.moveToNext()){
                     buffer.append("Item Code : "+result.getString(0)+"\n");
-                    /*buffer.append("Item Code : "+result.getString(1)+"\n");*/
+                    *//*buffer.append("Item Code : "+result.getString(1)+"\n");*//*
                     buffer.append("Discount Amount : "+result.getString(1)+"\n");
                     buffer.append("Title Name : "+result.getString(2)+"\n\n");
                 }
@@ -150,7 +162,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 StringBuffer buffer = new StringBuffer();
                 //while (result.moveToNext()){
                 buffer.append("Item Code : "+result.getString(0)+"\n");
-                /*buffer.append("Item Code : "+result.getString(1)+"\n");*/
+                *//*buffer.append("Item Code : "+result.getString(1)+"\n");*//*
                 buffer.append("Discount Amount : "+result.getString(1)+"\n");
                 buffer.append("Title Name : "+result.getString(2)+"\n\n");
                 //}
@@ -161,7 +173,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 builder.setMessage(buffer.toString());
                 builder.show();
             }
-        });
+        });*/
 
 
 
@@ -232,6 +244,33 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
+
+
+    //=======================================================================================================================================================================
+
+
+    public void save(View view){
+        String title = name.getText().toString().trim();
+        String amount = discount.getText().toString().trim();
+        String item_code = code.getText().toString().trim();
+
+        DHhelper dHhelper = new DHhelper(this);
+
+        Discount dis = new Discount(title,Integer.parseInt(amount),Integer.parseInt(item_code));
+
+        long result = dHhelper.addDiscount(dis);
+
+        if(result > 0){
+            Toast.makeText(this, "Saved "+result, Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Not saved "+result, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
 
 }
