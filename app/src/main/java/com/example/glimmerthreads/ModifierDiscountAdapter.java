@@ -1,6 +1,7 @@
 package com.example.glimmerthreads;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,12 +45,20 @@ public class ModifierDiscountAdapter extends RecyclerView.Adapter<ModifierDiscou
         holder.tvDiscountCode.setText(String.valueOf(dis.getDiscountID()));
         holder.tvAmount.setText(String.valueOf(dis.getAmount()));
 
+
+
         holder.updateCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, dis.getDiscountTitle() + " will be Updated", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, dis.getDiscountTitle() + " will be Updated", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context,Update_Discount.class);
+                intent.putExtra("DISCOUNT", dis);
+                context.startActivity(intent);
             }
         });
+
+
 
         holder.deleteCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +66,8 @@ public class ModifierDiscountAdapter extends RecyclerView.Adapter<ModifierDiscou
                 Toast.makeText(context, dis.getDiscountTitle() + " will be Deleted", Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
 

@@ -1,6 +1,8 @@
 package com.example.glimmerthreads;
 
-public class Discount {
+import java.io.Serializable;
+
+public class Discount implements Serializable {
 
     int discountID;
     String DiscountTitle;

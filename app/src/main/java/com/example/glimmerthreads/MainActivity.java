@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Rate:
                 startActivity(new Intent(MainActivity.this,Image_View.class));
                 break; //Redirects to Bus.xml when Login clicked
-            case R.id.nav_add_Items:
+            case R.id.nav_modify_discounts:
                 startActivity(new Intent(MainActivity.this,Display_All_Data.class));
                 break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_Share:

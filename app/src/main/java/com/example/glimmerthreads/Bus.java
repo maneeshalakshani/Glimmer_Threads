@@ -26,7 +26,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
     NavigationView navigationView;
     Toolbar toolbar;
     EditText discount,code,name;  //----
-    Button insert,update,delete,view,button_view_a_discount;
+    Button insert,update,delete,view,button_view_a_discount,modify_discounts;
     DHhelper DB;
     //DBHandler dbHandler;
 
@@ -43,14 +43,17 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
         name = findViewById(R.id.get_item_name);
         discount = findViewById(R.id.get_discount_1);
-        code = findViewById(R.id.get_item_code);    //-----
+        code = findViewById(R.id.get_item_code);
+
+
+        modify_discounts = findViewById(R.id.Modify_discounts);
         /*icode = findViewById(R.id.get_item_code);      //----*/
 
-        //insert = findViewById(R.id.button_get_discount);
+        /*insert = findViewById(R.id.button_get_discount);
         update = findViewById(R.id.button_update_discount);
-        delete = findViewById(R.id.button_delete_discount);
+        delete = findViewById(R.id.button_delete_discount);*/
         view = findViewById(R.id.button_view_discount);
-        button_view_a_discount = findViewById(R.id.button_view_a_discount);
+//        button_view_a_discount = findViewById(R.id.button_view_a_discount);
 
         DB = new DHhelper(this);
 
@@ -58,7 +61,14 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        modify_discounts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent i = new Intent(getApplicationContext(),Display_All_Data.class);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -66,8 +76,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-/*
-        insert.setOnClickListener(new View.OnClickListener() {
+        /*insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String discountName = name.getText().toString();
@@ -92,7 +101,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 String discountName = name.getText().toString();
                 int discountTXT = Integer.parseInt(discount.getText().toString());
                 int codeTXT = Integer.parseInt(code.getText().toString());
-                *//*int icodeTXT = Integer.parseInt(icode.getText().toString());*//*
+                int icodeTXT = Integer.parseInt(icode.getText().toString());
 
 
                 Boolean checkUpdateData = DB.updateData(discountName, codeTXT, discountTXT);
@@ -120,7 +129,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 }
             }
         });
-
+*/
 
 
 
@@ -134,10 +143,10 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
                 }
                 StringBuffer buffer = new StringBuffer();
                 while (result.moveToNext()){
-                    buffer.append("Item Code : "+result.getString(0)+"\n");
-                    *//*buffer.append("Item Code : "+result.getString(1)+"\n");*//*
-                    buffer.append("Discount Amount : "+result.getString(1)+"\n");
-                    buffer.append("Title Name : "+result.getString(2)+"\n\n");
+                    buffer.append("Discount Code : "+result.getString(0)+"\n");
+                    buffer.append("Item Code : "+result.getString(2)+"\n");
+                    buffer.append("Discount Amount : "+result.getString(3)+"\n");
+                    buffer.append("Title Name : "+result.getString(1)+"\n\n");
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(Bus.this);
@@ -150,30 +159,30 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
 
 
-        button_view_a_discount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int itemCode = Integer.parseInt(code.getText().toString());;
-                Cursor result = DB.getADiscout(itemCode);
-                if(result.getCount() == 0){
-                    Toast.makeText(Bus.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                StringBuffer buffer = new StringBuffer();
-                //while (result.moveToNext()){
-                buffer.append("Item Code : "+result.getString(0)+"\n");
-                *//*buffer.append("Item Code : "+result.getString(1)+"\n");*//*
-                buffer.append("Discount Amount : "+result.getString(1)+"\n");
-                buffer.append("Title Name : "+result.getString(2)+"\n\n");
-                //}
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(Bus.this);
-                builder.setCancelable(true);
-                builder.setTitle("Glimmer Threads");
-                builder.setMessage(buffer.toString());
-                builder.show();
-            }
-        });*/
+//        button_view_a_discount.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int itemCode = Integer.parseInt(code.getText().toString());;
+//                Cursor result = DB.getADiscout(itemCode);
+//                if(result.getCount() == 0){
+//                    Toast.makeText(Bus.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                StringBuffer buffer = new StringBuffer();
+//                //while (result.moveToNext()){
+//                buffer.append("Item Code : "+result.getString(0)+"\n");
+//                buffer.append("Item Code : "+result.getString(1)+"\n");
+//                buffer.append("Discount Amount : "+result.getString(1)+"\n");
+//                buffer.append("Title Name : "+result.getString(2)+"\n\n");
+//                //}
+//
+//                AlertDialog.Builder builder = new AlertDialog.Builder(Bus.this);
+//                builder.setCancelable(true);
+//                builder.setTitle("Glimmer Threads");
+//                builder.setMessage(buffer.toString());
+//                builder.show();
+//            }
+//        });
 
 
 

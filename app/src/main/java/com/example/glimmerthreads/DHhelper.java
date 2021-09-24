@@ -173,7 +173,27 @@ public class DHhelper extends SQLiteOpenHelper {
 
 
 
+    //To show in a popup/Alert
+    //Get all discounts
+    public Cursor getDiscount(){
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        //select a row
+        //discount_code matches with the given discount code
+        Cursor cursor = DB.rawQuery("select * from Discount_Table",null);
+
+        return cursor;
+    }
 
 
+    public int updateDiscount(Discount d) {
+        SQLiteDatabase DB = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("discountTitle",d.getDiscountTitle());
+        contentValues.put("itemCode",d.getiCode());
+        contentValues.put("amount",d.getAmount());
+        return DB.update("Discount_Table", contentValues,"discountID = ?" ,new String[]{String.valueOf(d.getDiscountID())});
+    }
 }
 
