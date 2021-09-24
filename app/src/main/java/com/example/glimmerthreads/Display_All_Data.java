@@ -15,6 +15,7 @@ public class Display_All_Data extends AppCompatActivity {
 
     TextView TVTotal;
     RecyclerView recyclerView;
+    ModifierDiscountAdapter modifierDiscountAdapter;
     ArrayList<Discount> discountList;
 
     @Override
@@ -30,7 +31,11 @@ public class Display_All_Data extends AppCompatActivity {
         discountList = dHhelper.getAllDiscount();
         TVTotal.setText("Total Students : " + discountList.size());
 
+        modifierDiscountAdapter = new ModifierDiscountAdapter(discountList,this);
+        recyclerView.setAdapter(modifierDiscountAdapter);
 
-
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
     }
 }

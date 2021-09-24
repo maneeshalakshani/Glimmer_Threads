@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class DiscountAdapter extends RecyclerView.Adapter<DiscountAdapter.DiscountViewHolder> {
-
-    Context context;
+/*public class DiscountAdapter extends RecyclerView.Adapter<DiscountAdapter.DiscountViewHolder> {*/
+public class DiscountAdapter {
+    /*Context context;
     ArrayList<Discount> list;
 
 
@@ -60,7 +60,7 @@ public class DiscountAdapter extends RecyclerView.Adapter<DiscountAdapter.Discou
             ItemCode = itemView.findViewById(R.id.TVItemCode);
         }
     }
-
+*/
 
 
 }
