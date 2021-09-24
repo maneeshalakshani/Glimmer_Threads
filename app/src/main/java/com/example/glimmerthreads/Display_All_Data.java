@@ -22,7 +22,7 @@ public class Display_All_Data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display__all__data);
 
-
+        recyclerView = findViewById(R.id.DiscountListRV);
         TVTotal = findViewById(R.id.TVTotal);
 
         DHhelper dHhelper = new DHhelper(this);
@@ -30,12 +30,7 @@ public class Display_All_Data extends AppCompatActivity {
         discountList = dHhelper.getAllDiscount();
         TVTotal.setText("Total Students : " + discountList.size());
 
-        for(Discount dis : discountList){
-            System.out.println(dis.getDiscountID());
-            System.out.println(dis.getDiscountTitle());
-            System.out.println(dis.getAmount());
-            System.out.println(dis.getiCode()+"\n\n");
-        }
+
 
     }
 }
