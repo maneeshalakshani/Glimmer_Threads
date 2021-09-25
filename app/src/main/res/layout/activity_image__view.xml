@@ -80,7 +80,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                android:paddingBottom="25dp">
 
                 <include
                     android:id="@+id/toolbar"
@@ -140,13 +141,13 @@
 
                 <ImageView
                     android:id="@+id/image"
-                    android:layout_width="300dp"
-                    android:layout_height="260dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
                     android:layout_below="@id/image_name"
                     android:layout_marginTop="28sp"
                     android:onClick="choseImage"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/upload_image_icon"
+                    android:src="@drawable/plus_icon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/image_name" />
@@ -158,15 +159,31 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/image"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="15dp"
                     android:background="#39b5db"
                     android:onClick="InsertImage"
-                    android:text="Save Image"
+                    android:text="Add Voucher"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/image" />
+
+                <Button
+                    android:id="@+id/showImage"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageUpload"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:background="#39b5db"
+                    android:onClick="moveToShowActivity"
+                    android:text="Show All"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageUpload" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="10dp">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Image Details"
-        android:background="@android:color/holo_blue_dark"
-        android:textColor="@android:color/white"
+        android:background="#C5C2C2"
+        android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:paddingLeft="10dp"
-        android:id="@+id/imageDetailsTV" />
+        android:paddingLeft="1dp"
+        android:id="@+id/imageDetailsTV"
+        android:textAlignment="center"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:id="@+id/sr_imageRow"
         android:layout_below="@id/imageDetailsTV"
         android:src="@drawable/mood"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/voucher_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/sr_imageRow">
+
+        <TextView
+            android:textSize="24sp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textAlignment="center"
+            android:background="@android:color/holo_red_dark"
+            android:textColor="@android:color/white" />
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class Image_Display extends AppCompatActivity {
 
     private DBHandler DB;
     private RecyclerView recyclerViewObject;
+    ArrayList<ImageModel> imageList;
 
     private RVAdapter rvAdapter;
 
@@ -32,7 +35,11 @@ public class Image_Display extends AppCompatActivity {
 
     public void getData(View view){
         try {
-            rvAdapter = new RVAdapter(DB.getAllImagesData());
+            /*rvAdapter = new RVAdapter(DB.getAllImagesData());*/
+            imageList = DB.getAllImagesData();
+
+            rvAdapter = new RVAdapter(imageList,this);
+            recyclerViewObject.setAdapter(rvAdapter);
             recyclerViewObject.setHasFixedSize(true);
 
             recyclerViewObject.setLayoutManager(new LinearLayoutManager(this));

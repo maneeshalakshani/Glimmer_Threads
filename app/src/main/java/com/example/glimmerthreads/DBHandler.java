@@ -113,4 +113,9 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
+
+    public int deleteVoucher(String imageName) {
+        SQLiteDatabase DB = getWritableDatabase();
+        return DB.delete("imageInfo","imageName = ?",new String[]{ String.valueOf(imageName) });
+    }
 }
