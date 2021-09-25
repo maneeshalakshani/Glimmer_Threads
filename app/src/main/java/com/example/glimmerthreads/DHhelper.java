@@ -163,7 +163,7 @@ public class DHhelper extends SQLiteOpenHelper {
                 String itemCode = cursor.getString(2);
                 String amount = cursor.getString(3);
 
-                Discount discount = new Discount(discountID,discountTitle,Integer.parseInt(itemCode),Integer.parseInt(amount));
+                Discount discount = new Discount(discountID,discountTitle,Integer.parseInt(amount),Integer.parseInt(itemCode));
                 discountList.add(discount);
             }while (cursor.moveToNext());
         }
@@ -194,6 +194,13 @@ public class DHhelper extends SQLiteOpenHelper {
         contentValues.put("itemCode",d.getiCode());
         contentValues.put("amount",d.getAmount());
         return DB.update("Discount_Table", contentValues,"discountID = ?" ,new String[]{String.valueOf(d.getDiscountID())});
+    }
+
+
+
+    public int deleteDiscount(int discountID) {
+        SQLiteDatabase DB = getWritableDatabase();
+        return DB.delete("Discount_Table","discountID = ?",new String[]{ String.valueOf(discountID) });
     }
 }
 

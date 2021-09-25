@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Display_Discount_To_Get"
+tools:openDrawer="start"
+android:orientation="vertical"
+android:fitsSystemWindows="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="184dp"
+    android:background="#f4b3bb">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:background="@android:color/holo_green_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#f4b3bb "
+        android:gravity="center_horizontal"
+        android:text="Glimmer Thread Sales"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />-->
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/glimmer_thread_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="200dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="16dp"
+        android:background="#002B2B2B"
+        android:text="Glimmer Thread Sales"
+        android:textAlignment="textEnd"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<TextView
+    android:id="@+id/TVTotal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Total Discounts"
+    android:layout_marginBottom="4dp" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/DiscountListRV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@android:color/darker_gray"/>
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.glimmerthreads;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,11 +61,37 @@ public class ModifierDiscountAdapter extends RecyclerView.Adapter<ModifierDiscou
         });
 
 
-
         holder.deleteCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, dis.getDiscountTitle() + " will be Deleted", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, dis.getDiscountTitle() + " will be Deleted", Toast.LENGTH_SHORT).show();
+
+                //Ask Confirmation in an alert Box
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Confirmation");
+                builder.setMessage("Are you sure to delete " + dis.getDiscountTitle() + " ?");
+                builder.setIcon(android.R.drawable.ic_menu_delete); //Delete Icon
+
+                builder.setCancelable(false);   //To stop go back from alert;if not either yes or no clicked
+
+                //If 'Yes' clicked, Do delete
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        DHhelper DB = new DHhelper(context);
+                        int result = DB.deleteDiscount(dis.getDiscountID());
+                        if(result > 0){
+                            Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+                            discountArrayList.remove(dis);
+                            notifyDataSetChanged();
+                        }else{
+                            Toast.makeText(context, "Not Deleted", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                builder.setNegativeButton("No",null); //Nothing Happens if 'No clicked'
+                builder.show();
             }
         });
 

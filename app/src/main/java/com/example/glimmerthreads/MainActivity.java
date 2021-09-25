@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -116,11 +117,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Sales:
                 startActivity(new Intent(MainActivity.this,Sales.class));
                 break; //Redirects to Bus.xml when Login clicked
-            case R.id.nav_Rate:
+            /*case R.id.nav_Rate:
                 startActivity(new Intent(MainActivity.this,Image_View.class));
-                break; //Redirects to Bus.xml when Login clicked
+                break; //Redirects to Bus.xml when Login clicked*/
             case R.id.nav_modify_discounts:
                 startActivity(new Intent(MainActivity.this,Display_All_Data.class));
+                break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_Sales2:
+                startActivity(new Intent(MainActivity.this, Display_Discount_To_Get.class));
+                break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_add_vouchers:
+                startActivity(new Intent(MainActivity.this, Image_View.class));
                 break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_Share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked

@@ -13,13 +13,13 @@
     tools:context=".Update_Discount"
     tools:openDrawer="start">
 
-    <!--<com.google.android.material.navigation.NavigationView
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu"
-        android:layout_gravity="start"/>-->
+        android:layout_gravity="start"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -136,7 +136,6 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/display_item_code"
                         android:hint="Enter Discount Code(Numbers)"
-
                         android:inputType="number"
                         android:textSize="20dp" />
 
@@ -173,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/display_discount"
                         android:hint="Update discount amount"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textSize="20dp" />
 
                     <Button
