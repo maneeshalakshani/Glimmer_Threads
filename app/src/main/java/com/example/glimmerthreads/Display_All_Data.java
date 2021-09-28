@@ -36,12 +36,9 @@ public class Display_All_Data extends AppCompatActivity{
 
         recyclerView = findViewById(R.id.DiscountListRV);
         TVTotal = findViewById(R.id.TVTotal);
-
         dHhelper = new DHhelper(this);
 
     }
-
-
 
     @Override
     protected void onStart() {
