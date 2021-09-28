@@ -46,29 +46,13 @@ public class Voucher_for_CustomerAdapter extends RecyclerView.Adapter<Voucher_fo
 
                 //Ask Confirmation in an alert Box
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Confirmation");
-                builder.setMessage("Are you sure to delete " + objectModelClass.getImageName() + " ?");
+                builder.setTitle("Use This code as Voucher...");
+                builder.setMessage( objectModelClass.getImageName());
                 builder.setIcon(android.R.drawable.ic_menu_delete); //Delete Icon
 
                 builder.setCancelable(false);   //To stop go back from alert;if not either yes or no clicked
 
-                //If 'Yes' clicked, Do delete
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        DBHandler DB = new DBHandler(context);
-                        int result = DB.deleteVoucher(objectModelClass.getImageName());
-                        if(result > 0){
-                            Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-                            objectImageModelClassList.remove(objectModelClass);
-                            notifyDataSetChanged();
-                        }else{
-                            Toast.makeText(context, "Not Deleted", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                builder.setNegativeButton("No",null); //Nothing Happens if 'No clicked'
+                builder.setPositiveButton("OK",null); //Nothing Happens if 'No clicked'
                 builder.show();
             }
         });

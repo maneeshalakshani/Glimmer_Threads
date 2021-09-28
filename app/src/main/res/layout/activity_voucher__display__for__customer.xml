@@ -58,6 +58,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <Button
         android:id="@+id/image_Display"
         android:layout_width="210dp"
@@ -76,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_Display"
-        android:layout_marginTop="2dp" />
+        android:layout_marginTop="2dp"
+        android:paddingBottom="30dp"/>
 
 </RelativeLayout>
