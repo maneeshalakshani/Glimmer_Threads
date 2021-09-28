@@ -19,25 +19,25 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="280dp"
         android:id="@+id/sr_imageRow"
         android:layout_below="@id/imageDetailsTV"
         android:src="@drawable/mood"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/voucher_delete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/sr_imageRow">
 
         <TextView
             android:textSize="24sp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="Delete"
             android:textAlignment="center"
             android:background="@android:color/holo_red_dark"

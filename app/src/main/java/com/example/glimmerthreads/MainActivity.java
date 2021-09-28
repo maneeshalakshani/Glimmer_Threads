@@ -117,9 +117,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Sales:
                 startActivity(new Intent(MainActivity.this,Sales.class));
                 break; //Redirects to Bus.xml when Login clicked
-            /*case R.id.nav_Rate:
-                startActivity(new Intent(MainActivity.this,Image_View.class));
-                break; //Redirects to Bus.xml when Login clicked*/
             case R.id.nav_modify_discounts:
                 startActivity(new Intent(MainActivity.this,Display_All_Data.class));
                 break; //Redirects to Bus.xml when Login clicked
@@ -128,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_add_vouchers:
                 startActivity(new Intent(MainActivity.this, Image_View.class));
+                break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_Display_Voucher:
+                startActivity(new Intent(MainActivity.this, Voucher_Display_For_Customer.class));
                 break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_Share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked
