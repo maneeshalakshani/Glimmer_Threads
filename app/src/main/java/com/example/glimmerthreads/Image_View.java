@@ -92,4 +92,3 @@ public class Image_View extends AppCompatActivity {
         startActivity(new Intent(this, Image_Display.class));
     }
 }
-
