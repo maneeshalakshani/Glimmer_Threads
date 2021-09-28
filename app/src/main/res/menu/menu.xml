@@ -4,20 +4,20 @@
     <!-- Menu Group 1 -->
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_Sales"
-            android:icon="@drawable/offer_icon"
-            android:title="Sales" />
+            android:id="@+id/nav_Home"
+            android:icon="@drawable/home_page"
+            android:title="Home" />
 
         <item
             android:id="@+id/nav_Sales2"
             android:icon="@drawable/offer_icon"
-            android:title="Sales2" />
-
+            android:title="Sales" />
 
         <item
-            android:id="@+id/nav_Home"
-            android:icon="@drawable/home_page"
-            android:title="Home" />
+            android:id="@+id/nav_Sales"
+            android:icon="@drawable/offer_icon"
+            android:title="Wish Lst" />
+
 
         <item
             android:id="@+id/nav_Rate"
@@ -28,6 +28,11 @@
             android:id="@+id/nav_Share"
             android:icon="@drawable/sgare_icon"
             android:title="Share" />
+
+        <item
+            android:id="@+id/nav_Display_Voucher"
+            android:icon="@drawable/sgare_icon"
+            android:title="Vouchers" />
     </group>
 
     <!-- Menu Group 2 -->
@@ -55,10 +60,10 @@
     <!-- Menu Group 3 -->
     <item android:title="Modify">
         <menu>
-            <item
+            <!--<item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/sgare_icon"
-                android:title="Share" />
+                android:title="Share" />-->
             <item
                 android:id="@+id/nav_modify_items"
                 android:icon="@drawable/delete"

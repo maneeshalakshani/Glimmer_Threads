@@ -25,10 +25,9 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    EditText discount,code,name;  //----
-    Button insert,update,delete,view,button_view_a_discount,modify_discounts;
+    EditText discount,code,name;
+    Button view,modify_discounts;
     DHhelper DB;
-    //DBHandler dbHandler;
 
 
     @Override
@@ -47,14 +46,7 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
 
         modify_discounts = findViewById(R.id.Modify_discounts);
-        /*icode = findViewById(R.id.get_item_code);      //----*/
-
-        /*insert = findViewById(R.id.button_get_discount);
-        update = findViewById(R.id.button_update_discount);
-        delete = findViewById(R.id.button_delete_discount);*/
         view = findViewById(R.id.button_view_discount);
-//        button_view_a_discount = findViewById(R.id.button_view_a_discount);
-
         DB = new DHhelper(this);
 
 
@@ -159,51 +151,6 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
 
 
 
-//        button_view_a_discount.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int itemCode = Integer.parseInt(code.getText().toString());;
-//                Cursor result = DB.getADiscout(itemCode);
-//                if(result.getCount() == 0){
-//                    Toast.makeText(Bus.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                StringBuffer buffer = new StringBuffer();
-//                //while (result.moveToNext()){
-//                buffer.append("Item Code : "+result.getString(0)+"\n");
-//                buffer.append("Item Code : "+result.getString(1)+"\n");
-//                buffer.append("Discount Amount : "+result.getString(1)+"\n");
-//                buffer.append("Title Name : "+result.getString(2)+"\n\n");
-//                //}
-//
-//                AlertDialog.Builder builder = new AlertDialog.Builder(Bus.this);
-//                builder.setCancelable(true);
-//                builder.setTitle("Glimmer Threads");
-//                builder.setMessage(buffer.toString());
-//                builder.show();
-//            }
-//        });
-
-
-
-
-
-        /*//Insert Images
-        public void InsertImage(View view){
-            try{
-                if(!imageDetails.getText.toString().isEmpty() && objectImageView.getDrawable() != null && imageToStore != null){
-                    dbHandler.storeImage(new ImageModel(imageDetails.getText().toString(),imageToStore));
-                }else{
-                    Toast.makeText(this, "Please select an Image name and Image", Toast.LENGTH_SHORT).show();
-                }
-            }catch(Exception e){
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }*/
-
-
-
-
         //------------Tool Bar-----------------------
         setSupportActionBar(toolbar);
 
@@ -244,6 +191,15 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
             case R.id.nav_Sales:
                 startActivity(new Intent(Bus.this,Sales.class));
                 break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_modify_discounts:
+                startActivity(new Intent(Bus.this,Display_All_Data.class));
+                break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_Sales2:
+                startActivity(new Intent(Bus.this, Display_Discount_To_Get.class));
+                break; //Redirects to Bus.xml when Login clicked
+            case R.id.nav_add_vouchers:
+                startActivity(new Intent(Bus.this, Image_View.class));
+                break; //Redirects to Bus.xml when Login clicked
             case R.id.nav_Share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); //Gives a toast message when Share Clicked
                 break;
@@ -253,8 +209,6 @@ public class Bus extends AppCompatActivity implements NavigationView.OnNavigatio
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 
 
 
