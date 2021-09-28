@@ -64,7 +64,7 @@
                     android:layout_height="match_parent"
                     android:text="Get Voucher"
                     android:textAlignment="center"
-                    android:background="@android:color/holo_red_dark"
+                    android:background="#E91E63"
                     android:textColor="@android:color/white" />
             </androidx.cardview.widget.CardView>
 
